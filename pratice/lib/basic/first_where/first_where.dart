@@ -25,3 +25,4 @@ class SampleModel {
 
   SampleModel({required this.id, required this.name, required this.subname});
 }
+
