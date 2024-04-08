@@ -1,1 +1,1 @@
-latihan doang
+buat latihan doang
