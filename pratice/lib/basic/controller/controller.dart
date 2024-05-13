@@ -39,27 +39,57 @@
 
 // }
 
-import 'dart:async';
+// import 'dart:async';
 
-void main() {
-  // Membuat broadcast stream dengan tipe data String
-  Stream<String> broadcastStream = Stream.periodic(
-          Duration(milliseconds: 100), (index) => 'Data ke-${index + 1}')
-      .take(100)
-      .asBroadcastStream();
+// void main() {
+//   // Membuat broadcast stream dengan tipe data String
+//   Stream<String> broadcastStream = Stream.periodic(
+//           Duration(milliseconds: 100), (index) => 'Data ke-${index + 1}')
+//       .take(100)
+//       .asBroadcastStream();
 
-  // Listener 1
-  broadcastStream.listen((data) {
-    print('Listener 1: $data');
-  });
+//   // Listener 1
+//   broadcastStream.listen((data) {
+//     print('Listener 1: $data');
+//   });
 
-  // Listener 2
-  broadcastStream.listen((data) {
-    print('Listener 2: $data');
+//   // Listener 2
+//   broadcastStream.listen((data) {
+//     print('Listener 2: $data');
+//   });
+// }
+
+// void main(List<String> args) async {
+//   await for (var number in data()) {
+//     for (int i = 0; i < number.length; i++) {
+//       await Future.delayed(Duration(seconds: 1));
+//       print('data ke : ${number[i]}');
+//       if (i == number.length - 1) {
+//         print('\n');
+//         print('menunggu data baru....');
+//       }
+//     }
+//   }
+// }
+
+void main(List<String> args) {
+  data().listen((event) {
+    for (int i = 0; i < event.length; i++) {
+      print('data ke : ${event[i]}');
+    }
   });
 }
 
-void asb() async {
-  try {} catch (e) {
-  } finally {}
+Stream<List<int>> data() async* {
+  yield [
+    1,
+    2,
+    3,
+    4,
+    5,
+  ];
+
+  yield [
+    12 , 212, 21, 21, 21 ,21
+  ];
 }
