@@ -1,1 +1,1 @@
-buat latihan doang
+Buat latih logika aja der
